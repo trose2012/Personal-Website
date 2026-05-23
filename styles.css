@@ -1,0 +1,162 @@
+p {
+  font-family:'quicksand';
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.elements {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: whitesmoke;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: #89a0ce;
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: 'quicksand';
+  flex-direction: row;
+  gap: 35px;
+}
+
+.rows {
+  cursor: pointer;
+}
+
+.span {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  font-family: 'quicksand';
+}
+
+.burgerDiv {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .elements {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 20px;
+    width: 70%;
+    height: 100%;
+    transform: translateX(-100%);
+    font-family: 'quicksand';
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 500;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    position: fixed; /* Fixed prevents the logo background from blending weirdly */
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100;
+    padding-top: 100px;
+    background-color: #89a0ce;
+    transform: translateX(-100%);
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 98;
+  }
+
+  .burgerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    padding-top: 20px;
+    position: relative;
+    z-index: 99;
+    font-family: 'quicksand';
+  }
+
+  .elements.active {
+    transform: translateX(0);
+  }
+
+    .burgerDiv {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    /* Remove the margin-left and padding-top you had earlier so Flexbox centers it */
+  }
+
+  .elements.active {
+    transform: translateX(0);
+  }
+
+}
+
+.sidebar {
+  transform: translateX(0px);
+}
+
+.burgerDiv.active .line-0 {
+  transform: rotate(45deg) translate(4.5px, 12px);
+}
+
+.burgerDiv.active .line-1 {
+  transform: scale(0);
+}
+
+.burgerDiv.active .line-2 {
+  transform: rotate(-45deg) translateY(-7.5px);
+}
+
+.rows a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: 'quicksand';
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #89a0ce;
+  padding: 10px 30px;
+}
+
+.nav-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav-brand-text {
+  font-family: 'quicksand';
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+}
