@@ -160,3 +160,10 @@ body {
   font-size: 22px;
   font-weight: 700;
 }
+
+.logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
