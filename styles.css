@@ -144,7 +144,7 @@ body {
   top: 20px;
   left: 0;
   width: 94%;
-  max-width: 1200px;
+  max-width: 2000px;
   margin: 0 auto;
   border-radius: 50px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -204,17 +204,32 @@ body {
   border-style: solid;
   padding: 20px;
   width: 92%;
-  height: 300px;
+  height: 80%;
   display: flex;
   align-items: center;
-  justify-content: left;
   margin: 20px auto;
   font-family: 'quicksand';
   color: white;
   gap: 40px;
+  justify-content: center;
+}
+
+.box-profile-card {
+  border-color: green;
+  border-radius: 30px;
+  border-width: 4px;
+  border-style: solid;
+  padding: 20px;
+  width: 92%;
+  height: 92%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  margin: 20px auto;
+  font-family: 'quicksand';
+  color: white;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .info-text {
@@ -251,4 +266,43 @@ body {
 .button:hover {
   background-color: green;
   color: white;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.link {
+  color: green;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: rgba(245, 245, 245, 0.692);
+  transition-duration: 0.4s;
+  text-decoration: none;
+  border-bottom: 2px dotted rgba(245, 245, 245, 0.692);
+}
+
+.tiny-button {
+  transition: 0.4s;
+  transform: scale(1);
+  display: inline-block;
+}
+
+.tiny-button:hover {
+  transition: 0.4s;
+  transform: scale(1.15);
+  display: inline-block;
+}
+
+.spinny {
+  display: inline-block;
+  transition: transform 0.6s ease-in-out;
+}
+.spinny:hover {
+  transform: rotate(360deg)
 }
