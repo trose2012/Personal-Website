@@ -1,2 +1,3 @@
 # Theo's Personal Website
-This is my personal webiste! It has my projects, information about me, and more!
+A personal webite that has projects, a contact page, and more!
+
