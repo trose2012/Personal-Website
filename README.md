@@ -14,6 +14,6 @@ Welcome to my Personal Website, a simple website with everything you need to kno
 - Rounded corners 😱
 
 ## 🌐 See it in ACTION!
-![DEMOIMG](/DemoImage.png)
+![DEMOIMG](/image4demo.png)
 
 [Demo](https://chr0ma.com)
