@@ -149,6 +149,14 @@ body {
   border-color: green;
   border-width: 4px;
   border-style: solid;
+  animation: neonPulse 2s infinite alternate;
+  transition: 0.4s;
+}
+
+.navbar:hover {
+  display: flex;
+  transition: 0.4s;
+  transform: scale(1.04);
 }
 
 .nav-logo-group {
@@ -206,6 +214,7 @@ body {
   justify-content: center;
   transition-duration: 0.4s;
   flex-direction: column;
+  animation: neonPulse 2s infinite alternate;
 }
 
 .boxes-4-name {
@@ -224,6 +233,12 @@ body {
   gap: 40px;
   justify-content: center;
   transition-duration: 0.4s;
+  animation: neonPulse 2s infinite alternate;
+}
+
+.boxes-4-name:hover {
+  transition-duration: 0.4s;
+  transform: scale(1.02)
 }
 
 .boxes:hover {
@@ -253,6 +268,7 @@ body {
   justify-content: center;
   flex-direction: column;
   transition-duration: 0.4s;
+  animation: neonPulse 2s infinite alternate;
 }
 
 .info-text {
@@ -329,7 +345,7 @@ body {
   transition: transform 0.6s ease-in-out;
 }
 .spinny:hover {
-  transform: rotate(360deg);
+  transform: rotate(360deg) scale(1.1);
 }
 
 .container-box {
@@ -359,4 +375,41 @@ body {
   justify-content: center;
   transition-duration: 0.4s;
   flex-direction: column;
+  animation: neonPulse 2s infinite alternate;
+}
+
+.small-box:hover {
+  transition: 0.4s;
+  transform: scale(1.04);
+}
+
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 5px #00ff00, 0 0 7px #00ff00; }
+  100% { box-shadow: 0 0 15px #00ff00, 0 0 20px #00ff00}
+}
+
+.wave-letter {
+  display: inline-block;
+  animation: wave 1.2s infinite ease-in-out, colorWave 3s infinite linear;
+  font-family: 'Frankfurter', 'Comfortaa', sans-serif;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+  .wave-letter:nth-child(1) { animation-delay: 0.1s; }
+  .wave-letter:nth-child(2) { animation-delay: 0.2s; }
+  .wave-letter:nth-child(3) { animation-delay: 0.3s; }
+  .wave-letter:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes colorWave {
+  0%, 100% { color: #00ff00;}
+  33% {color: #00ffff;}
+  66% {color: #ff00ff;}
+}
+
+@font-face {
+  font-family:'Frankfurter';
+  src: url('/franfurter.otf') format('opentype');
 }
