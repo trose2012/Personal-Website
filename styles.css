@@ -302,6 +302,7 @@ body {
   font-family: 'quicksand';
   transition-duration: 0.4s;
   gap: 8px;
+  animation: neonPulse 2s infinite alternate;
 }
 
 .button:hover {
@@ -372,10 +373,29 @@ body {
   font-family: 'quicksand';
   color: white;
   gap: 15px;
-  justify-content: center;
+  transition-duration: 0.4s;
+  flex-direction: row;
+  animation: neonPulse 2s infinite alternate;
+  justify-content: start;
+}
+
+.projects-small-box {
+  border-color: green;
+  border-radius: 30px;
+  border-width: 4px;
+  border-style: solid;
+  padding: 20px;
+  width: 340px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  font-family: 'quicksand';
+  color: white;
+  gap: 15px;
   transition-duration: 0.4s;
   flex-direction: column;
   animation: neonPulse 2s infinite alternate;
+  justify-content: center;
 }
 
 .small-box:hover {
