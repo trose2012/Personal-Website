@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="/assets/Favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Playwrite+US+Trad+Guides&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>Theo</title>
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="nav-logo-group">
+      <a href="/" class="logo-link">
+        <img src="/assets/logo.png" alt="Logo" class="nav-logo">
+        <span class="nav-brand-text">Theo</span>
+      </a>
+    </div>
+
+    <ul class="elements">
+      <li class="rows"><a style="color: grey;" href="/">Home</a></li>
+      <li class="rows"><a style="color: grey;" href="/projects.html">Projects</a></li>
+      <li class="rows"><a style="color: grey;" href="/favs.html">Favs</a></li>
+      <li class="rows"><a style="color: white;" href="/blog.html">Blog</a></li>
+    </ul>
+
+    <div class="burgerDiv">
+      <div class="span line-0"></div>
+      <div class="span line-1"></div>
+      <div class="span line-2"></div>
+    </div>
+  </nav>
+
+ <div class="boxes">
+    <h1>Welcome to my blog!</h1>
+    <P>Learn more about me and other random stuff.</P>
+    <div class="container-box">
+      <div class="projects-small-box">
+        <h2>Blog</h2>
+        <img style="width: 70%; height: 50%; border: 2px solid green; border-radius: 30px; animation: neonPulse 2s infinite alternate;" src="/assets/post1-img.png"/>
+        <div style="display: flex; gap: 15px; align-items: center; justify-content: center;">
+        <a href="/blog-posts/welcome.html" class="button">
+          <img style="width: 30px;" src="https://icons.hackclub.com/api/icons/white/quote">
+          <span>Read</span>
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div style="flex-direction: column; gap: 15px;" class="boxes">
+    <div style="display: flex; align-items: center; justify-content: flex-start; width: 100%; gap: 10px;">
+    <img src="/assets/logo.png" style="width: 60px; height: 60px"/>
+    <h1>Theo</h1>
+  </div>
+  <h3>88x31 Buttons!</h3>
+    <div>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer">
+      <img src="https://cyber.dabamos.de/88x31/cssdif.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://apple.com/">
+      <img src="https://88x31.nl/gifs/apple.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://ublockorigin.com/">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAAbFBMVEXN0MwYGRePkY71DBx2AQDCvrvRpqgAAQD9//yAAAFxc3DpRFJJS0iwoqHtKTS3tbOYPT26lZUjJCKPLi2vcXKJHB4xMzHyIC/05+enXVzUycasqqh8fnuBDg1kZmTYdn2eUFCygYHhd4Hctrgqg8b9AAACwklEQVRIx7WWh5KrIBiFlZYIKAq22KLm/d/xHkxZY8rOnVmZXYrA5+EAvwmOO6VgJ+4B4GCHdNiATZ7Hu4DjMc3434PjbOyjdIo36JaQOGjl6sGjTsi1lOa6YLkFtxnSNBaRT2k+oRWb+yAZ6nAg4Q/4Xo9tGJaLdTa+PdiCc+dcHz1S71wxtp7ZQp0MudYe1kkIJFKiTrxGq01batIRIlsjZUcwuEP/CnxaUW/JeREhAQSKbYtSlwPadoD62HZeOPHLkbbsQuI7/Ru1lWH3DGYs8hlbShiyAmMaypBwLfXAOQlLHdzAg5WlH4e6XsDS//1YAXABh/uiL1zPVuAuXKywmFNKU3ZaG0Og0veWJensILUfZ9H5HszyrGCpyC6NSNkdPGDfAA5thzldGerA6NAutsDjGPXBXMGdLd+BR5hwqR071cdG1IEnp/93U2LTWvJ6jk8Ai6YAGLLHWhTsBSyuBf9wfyTEv7kg3oorOMXmCS95A+Z0IXKl3lCV+HTzpgc4Z8w1F8ei5Ryv5l7Bgp5fJYvP4Azgqc5T+HtCluNgnMzTyIQuk5NK8LMXLXwT7/DvUcnHWBEXEStEXdfZpT4u3D7fgj2OJ4JTmpzRVr7FRaI4T9RHsHHYveKUw1ufsYi57NnihCbQeK6amSoKID0HvKKNoGhS/hk89ddbF91uHhufBSsl/IIT1dBKzFRUlZcuAMYT9SVsmpStAwUrnsMyFo19E3BCwWv8I68oDfhMeZOIb/E4dmtuPz2v7pz4k0arilcqEJWCYDiAKp0bIb4H+sytuJudgwXcHzU6zzfBSlXI8IoPV2b9BYnTRzSeNlzuz4HfLIDnOeGwtxINxfkAdOn7+mky+SK6OL1ECZHwG98jOSpqOb7LxfgdDNGIy2+/pj828vvNeMQNwX8H83h0e3yld/zB8rfgwy4p2Il7+AekKDozf/zkfQAAAABJRU5ErkJggg==" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://ublockorigin.com/">
+      <img src="https://bomberfish.ca/buttons/github.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://hackclub.com/">
+      <img src="https://bomberfish.ca/buttons/hackclub.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://brave.com/">
+      <img src="https://88x31.kate.pet/brave.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com">
+      <img src="https://88x31.kate.pet/vscode.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer">
+      <img src="https://88x31.kate.pet/smile.png" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+      <a class="tiny-button" target="_blank" rel="noopener noreferrer">
+      <img src="https://88x31.kate.pet/thevoid.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+      <a class="tiny-button" target="_blank" rel="noopener noreferrer">
+      <img src="https://88x31.kate.pet/idreaminhtml.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+      <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=1s">
+      <img src="https://cyber.dabamos.de/88x31/no.gif" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+
+    </div>
+  <h3>Friends :D</h3>
+    <div>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://chr0ma.com">
+      <img src="https://user-cdn.hackclub-assets.com/019e575c-eb1a-7d99-ace5-9d2b52b092f4/88x31.png" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+    <a class="tiny-button" target="_blank" rel="noopener noreferrer" href="https://jdhdev.site/">
+      <img src="https://jdhdev.site/api/8831.php" style="width:88px; height:31px; margin:5px;"/>
+    </a>
+
+    </div>
+<br>
+  <iframe
+  src="https://webring.hackclub.com/embed.html"
+  width="150"
+  height="50"
+  frameborder="0"
+  scrolling="no"
+></iframe>
+<br>
+    <div style="display: flex; justify-content: center; width: 100%; flex-direction: column; align-items: center;">
+  <a class="bottom-icons" style="align-items: center; gap: 2px; display: inline-flex; color: green; text-decoration: none;" href="https://github.com/trose2012/Personal-Website/" target="_blank">
+  <img style="height: 28px; height: 28px;" src="https://icons.hackclub.com/api/icons/green/github"/>
+  <span>Source</span>
+  </a>
+<br>
+  <p>Made with 💚 by Theo.</p>
+</div>
+
+    </div>
+  </footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
