@@ -419,7 +419,7 @@ body {
   transition-duration: 0.4s;
   flex-direction: column;
   animation: neonPulse 2s infinite alternate;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
 }
 
