@@ -12,7 +12,7 @@ Welcome to my Personal Website, a simple website with everything you need to kno
 - Lot's of 88x31 buttons!
 - Contains the official [Hack Club Webring!](https://webring.hackclub.com)
 - Has a secret hover effect when you hover over my profile picture! :0
-- 
+- Responsive Web Design! - Just about any screen size works!
 
 ## 🌐 See it in ACTION!
 
