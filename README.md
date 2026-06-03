@@ -6,12 +6,13 @@
 Welcome to my Personal Website, a simple website with everything you need to know.
 
 ## 🔍 Features
-- Simple
-- Clean
-- Projects
-- About Me
-- Contact Page
-- Rounded corners 😱
+- Very Immersize, Lot's of hover effects.
+- Contains 404 Page.
+- Lots of neon colors and nice hacker vibe.
+- Lot's of 88x31 buttons!
+- Contains the official [Hack Club Webring!](https://webring.hackclub.com)
+- Has a secret hover effect when you hover over my profile picture! :0
+- 
 
 ## 🌐 See it in ACTION!
 
