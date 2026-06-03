@@ -19,4 +19,4 @@ Welcome to my Personal Website, a simple website with everything you need to kno
 
 [Demo](https://chr0ma.com)
 
-![DEMOIMG](/image4demo.png)
+![DEMOIMG](/demoimg.png)
