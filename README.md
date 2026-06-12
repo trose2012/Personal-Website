@@ -12,9 +12,11 @@ Welcome to my Personal Website, a simple website with everything you need to kno
 - Contains the official [Hack Club Webring!](https://webring.hackclub.com)
 - Has a secret hover effect when you hover over my profile picture! :0
 - Responsive Web Design! - Just about any screen size works!
+- Contains a cool little page where I can put my favorite things along with what I currently do / use.
+- Contains the following pages: Home, Projects, Favs, & Blog.
 
 ## 🌐 See it in ACTION!
 
 [Demo](https://chr0ma.com)
 
-![DEMOIMG](/image4demo.png)
+![DEMOIMG](/demoimg.png)
