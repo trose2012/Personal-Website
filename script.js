@@ -8,48 +8,90 @@ function toggler() {
 
 burger.addEventListener("click", toggler);
 
-function updateStatus() {
-  fetch('https://api.lanyard.rest/v1/users/963520338442997850')
-    .then(response => response.json())
-    .then(json => {
-      const data = json.data;
-      const statusText = document.getElementById('status-text');
-      const statusDot = document.querySelector('.status-dot');
-      const statusIcon = document.getElementById('status-icon');
+function updateSmartStatus() {
+  const statusText = document.getElementById('status-text');
+  const statusDot = document.querySelector('.status-dot');
+  const statusIcon = document.getElementById('status-icon');
+  const statusDetail = document.getElementById('status-detail');
 
-      const realActivities = data.activities.filter(act => act.id !== 'custom');
+  const LASTFM_USER = "trose2012"; 
+  const LASTFM_API_KEY = "95c6adebfda88ca3c8bb8644c0e6a996";
+  const DISCORD_ID = "963520338442997850";
 
-      // 1. Check Spotify first
-      if (data.listening_to_spotify) {
+  // 1. Check Music First via Last.fm
+  fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USER}&api_key=${LASTFM_API_KEY}&format=json&limit=1`)
+    .then(res => res.json())
+    .then(musicData => {
+      const latestTrack = musicData.recenttracks.track[0];
+      const isPlayingNow = latestTrack && latestTrack['@attr'] && latestTrack['@attr'].nowplaying === 'true';
+
+      if (isPlayingNow) {
+        statusDot.style.backgroundColor = '#1db954'; // Spotify Green
         statusIcon.src = '/assets/spotify-logo.svg';
         statusIcon.style.display = 'inline-block';
-        statusText.innerText = `${data.spotify.song} by ${data.spotify.artist}`;
-        statusDot.style.backgroundColor = '#1db954';
-      } 
-      // 2. Gaming check
-      else if (realActivities.length > 0) {
-        statusDot.style.backgroundColor = '#2ecc71'; 
-        statusIcon.src = 'https://icons.hackclub.com/api/icons/green/game-controller-wired';
-        statusIcon.style.display = 'inline-block';
-        statusText.innerText = `${realActivities[0].name}`;
+        statusText.innerText = `${latestTrack.name}`;
+        
+        statusDetail.style.cursor = 'pointer';
+        statusDetail.onclick = () => {
+          window.open(`https://open.spotify.com/search/${encodeURIComponent(latestTrack.name + ' ' + latestTrack.artist['#text'])}`, '_blank');
+        };
+        return; // Music is active, exit early!
       }
-      // 3. Plain Online check
-      else if (data.discord_status === 'online') {
-        statusDot.style.backgroundColor = '#2ecc71';
-        statusText.innerText = '';
-        statusIcon.style.display = 'none';
-      }
-      // 4. Offline fallback
-      else {
-        statusText.innerText = ''; 
-        statusDot.style.backgroundColor = '#747f8d';
-        statusIcon.style.display = 'none';
-      }
+
+      // 2. Music is off! Let's check Lanyard for Fortnite / Luna
+      fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`)
+        .then(res => res.json())
+        .then(discordJson => {
+          const data = discordJson.data;
+          const isDiscordOnline = data.discord_status === 'online' || data.discord_status === 'dnd' || data.discord_status === 'idle';
+          
+          // Filter out custom statuses so we only get real games/apps
+          const realActivities = data.activities.filter(act => act.id !== 'custom');
+
+          // If you are playing Fortnite or running Luna activity
+          if (realActivities.length > 0) {
+            statusDot.style.backgroundColor = '#2ecc71'; // Gaming Green
+            statusIcon.src = 'https://icons.hackclub.com/api/icons/green/wired-controller';
+            statusIcon.style.display = 'inline-block';
+            statusText.innerText = `${realActivities[0].name}`;
+            
+            statusDetail.style.cursor = 'default';
+            statusDetail.onclick = null;
+            return;
+          }
+
+          // 3. Just plain online (Discord open, no games, no music)
+          if (isDiscordOnline) {
+            statusDot.style.backgroundColor = '#2ecc71';
+            statusIcon.style.display = 'none';
+            statusText.innerText = '';
+            statusDetail.style.cursor = 'default';
+            statusDetail.onclick = null;
+            return;
+          }
+
+          // 4. Everything is completely off
+          statusDot.style.backgroundColor = '#747f8d'; // Grey
+          statusIcon.style.display = 'none';
+          statusText.innerText = '';
+          statusDetail.style.cursor = 'default';
+          statusDetail.onclick = null;
+        })
+        .catch(() => {
+          // Lanyard fetch failed
+          statusDot.style.backgroundColor = '#747f8d';
+          statusIcon.style.display = 'none';
+          statusText.innerText = '';
+        });
+    })
+    .catch(() => {
+      // Last.fm fetch failed
+      statusDot.style.backgroundColor = '#747f8d';
+      statusIcon.style.display = 'none';
+      statusText.innerText = '';
     });
 }
 
-// Run it immediately when the page first boots up
-updateStatus();
-
-// Then automatically rerun it every 5000 milliseconds (5 seconds)
-setInterval(updateStatus, 5000);
+// Run immediately and update every 10 seconds
+updateSmartStatus();
+setInterval(updateSmartStatus, 10000);

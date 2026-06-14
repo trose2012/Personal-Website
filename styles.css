@@ -1,3 +1,5 @@
+@import "https://unpkg.com/open-props@1.6.17/easings.min.css";
+
 p {
   font-family:'quicksand';
   color: white;
@@ -225,7 +227,7 @@ body {
   border-style: solid;
   padding: 20px;
   width: 92%;
-  height: 80%;
+  height: 100%;
   display: flex;
   align-items: center;
   margin: 20px auto;
@@ -347,6 +349,8 @@ body {
   display: inline-block;
   transition: transform 0.6s ease-in-out;
   animation: neonPulse 2s infinite alternate;
+  position: relative; /* 👈 Tells the browser it's allowed to layer */
+  z-index: 1;         /* 👈 Places the photo on layer 1 */
 }
 .spinny:hover {
   transform: rotate(360deg);
@@ -503,13 +507,19 @@ transition: 0.4s;
 .avatar-container {
   position: relative;
   display: inline-block;
-  transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   cursor: pointer;
   transition: transform 0.6s ease-in-out;
-
 }
 
 .avatar-container:hover {
-transform: scale(1.1);
-transition: transform 0.6s ease-in-out;
+  transform: scale(1.1);
+}
+
+.spinny {
+  display: inline-block;
+  transition: transform 0.6s ease-in-out;
+  animation: neonPulse 2s infinite alternate;
+}
+.spinny:hover {
+  transform: rotate(360deg);
 }
