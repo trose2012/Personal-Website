@@ -51,7 +51,7 @@ function updateSmartStatus() {
           // If you are playing Fortnite or running Luna activity
           if (realActivities.length > 0) {
             statusDot.style.backgroundColor = '#2ecc71'; // Gaming Green
-            statusIcon.src = 'https://icons.hackclub.com/api/icons/green/wired-controller';
+            statusIcon.src = 'https://icons.hackclub.com/api/icons/green/game-controller-wired';
             statusIcon.style.display = 'inline-block';
             statusText.innerText = `${realActivities[0].name}`;
             
@@ -92,6 +92,46 @@ function updateSmartStatus() {
     });
 }
 
-// Run immediately and update every 10 seconds
 updateSmartStatus();
 setInterval(updateSmartStatus, 10000);
+
+
+
+
+let currentFetchController = null;
+
+document.querySelectorAll('.rows a, .rows-highlighted a').forEach(link => {
+  link.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const targetUrl = link.getAttribute('href');
+    
+    if (currentFetchController) {
+      currentFetchController.abort();
+    }
+    
+    currentFetchController = new AbortController();
+    const { signal } = currentFetchController;
+    
+    try {
+      document.body.style.opacity = '0';
+      
+      const response = await fetch(targetUrl, { signal });
+      const htmlText = await response.text();
+      
+      const parser = new DOMParser();
+      const newDoc = parser.parseFromString(htmlText, 'text/html');
+      
+      document.body.innerHTML = newDoc.body.innerHTML;
+      history.pushState(null, '', targetUrl);
+      
+      document.body.style.opacity = '1';
+      
+    } catch (error) {
+      if (error.name !== 'AbortError') {
+        console.error("Page load failed:", error);
+      }
+    } finally {
+      currentFetchController = null;
+    }
+  });
+});

@@ -1,5 +1,14 @@
 @import "https://unpkg.com/open-props@1.6.17/easings.min.css";
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+}
+
 p {
   font-family:'quicksand';
   color: white;
@@ -9,6 +18,17 @@ p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+body {
+  /* This tells your HP Envy's graphics chip to make the opacity look buttery smooth */
+  transition: opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity;
+}
+
+body.fade-out {
+  opacity: 0;
 }
 
 body {
@@ -38,7 +58,6 @@ body {
 .rows:hover {
   transition-duration: 0.4s;
   text-decoration: none;
-  border-bottom: 1px solid rgba(245, 245, 245, 0.692);
 }
 
 .span {
@@ -123,10 +142,28 @@ body {
 
 .rows a {
   text-decoration: none;
+  color: grey;
+  font-family: 'quicksand';
+  position: relative;
+  padding-bottom: 4px;
+  transition: 0.5s;
+}
+
+.rows-highlighted a {
+  text-decoration: none;
   color: whitesmoke;
   font-family: 'quicksand';
   position: relative;
   padding-bottom: 4px;
+  transition: 0.5s;
+}
+
+.rows a:hover {
+  color: green;
+}
+
+.rows-highlighted a:hover {
+  color: green;
 }
 
 .navbar {
@@ -182,6 +219,11 @@ body {
   color: white;
   font-size: 22px;
   font-weight: 700;
+  transition: 0.5s;
+}
+
+.nav-brand-text:hover {
+  color: green;
 }
 
 .logo-link {
@@ -189,6 +231,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  transition: 0.6s;
 }
 
 .main {
